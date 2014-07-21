@@ -28,22 +28,31 @@ module.exports = function(grunt) {
       }
     },
 
+    eslint: {
+      app: [ 'app/**/*.js' ]
+    },
+
     delta: {
       options: {
         livereload: true
       },
 
       gruntfile: {
-        files: ['./Gruntfile.js']
+        files: [ './Gruntfile.js' ]
       },
 
       html: {
-        files: ['**/*.html']
+        files: [ '**/*.html' ]
       },
 
       scss: {
         files: [ 'scss/*.scss' ],
         tasks: [ 'sass:build' ]
+      },
+
+      js: {
+        files: [ 'app/**/*/js' ],
+        tasks: [ 'eslint' ]
       }
     }
   };
