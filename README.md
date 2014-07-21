@@ -1,5 +1,4 @@
 # starter-backbone-requirejs
-----------------------------
 
 An opinionated starter kit for Backbone components (and small apps).
 
