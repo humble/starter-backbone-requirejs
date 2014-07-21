@@ -1,0 +1,30 @@
+{
+  "name": "starter-backbone-requirejs",
+  "version": "0.0.0",
+  "authors": [
+    "Will Mruzek <mruzekw@gmail.com>"
+  ],
+  "private": true,
+  "keywords": [
+    "starter",
+    "kit",
+    "backbone",
+    "requirejs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "~3.0.1",
+    "jquery": "~2.1.1",
+    "underscore": ">=1.5.0",
+    "backbone": "~1.1.2",
+    "requirejs-bower": "~2.1.14",
+    "requirejs-text": "~2.0.12"
+  }
+}
