@@ -29,7 +29,33 @@ module.exports = function(grunt) {
     },
 
     eslint: {
-      app: [ 'app/**/*.js' ]
+      app: [
+        'app/**/*.js',
+        '!**/*.spec.js'
+      ]
+    },
+
+    karma: {
+      options: {
+        configFile: './karma.conf.js',
+        files: [
+          { pattern: 'node_modules/chai/chai.js', included: false },
+          { pattern: 'vendor/**/*.js', included: false },
+          { pattern: 'app/**/*.js', included: false },
+          { pattern: 'app/**/*.spec.js', included: false },
+
+          'main-test.js'
+        ]
+      },
+
+      unit: {
+        background: true
+      },
+
+      continuous: {
+        singleRun: true,
+        browsers: [ 'Chrome' ]
+      }
     },
 
     delta: {
@@ -51,8 +77,8 @@ module.exports = function(grunt) {
       },
 
       js: {
-        files: [ 'app/**/*/js' ],
-        tasks: [ 'eslint' ]
+        files: [ 'app/**/*.js' ],
+        tasks: [ 'eslint', 'karma:unit:run' ]
       }
     }
   };
@@ -63,6 +89,8 @@ module.exports = function(grunt) {
   grunt.registerTask( 'build:scss', [ 'sass:build' ] );
 
   grunt.renameTask( 'watch', 'delta' );
-  grunt.registerTask( 'watch', [ 'build', 'connect:server', 'delta' ] );
+  grunt.registerTask( 'watch', [ 'build', 'karma:unit:start', 'connect:server', 'delta' ] );
+
+  grunt.registerTask( 'test', [ 'karma:continuous' ] );
 
 }

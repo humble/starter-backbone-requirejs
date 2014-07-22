@@ -4,44 +4,7 @@
   <link href="/vendor/normalize.css/normalize.css" media="all" rel="stylesheet" type="text/css" />
   <link href="/css/main.css" media="all" rel="stylesheet" type="text/css" />
 
-  <script type="text/javascript" src="/vendor/requirejs-bower/require.js"></script>
-  <script type="text/javascript">
-    require.config({
-      baseUrl: '/app',
-      paths : {
-        'text':        '../vendor/requirejs-text/text',
-        'jquery':      '../vendor/jquery/dist/jquery',
-        'underscore':  '../vendor/underscore/underscore',
-        'backbone':    '../vendor/backbone/backbone',
-      },
-      shim : {
-        'jquery' : {
-          exports : 'jQuery'
-        },
-        'underscore' : {
-          exports : '_'
-        },
-        'backbone' : {
-          deps : ['jquery', 'underscore'],
-          exports : 'Backbone'
-        }
-      }
-    });
-  </script>
-
-  <script type="text/javascript">
-
-    require([
-      'jquery',
-      'underscore',
-      'backbone',
-    ], function ($, _, Backbone) {
-
-
-
-    });
-
-  </script>
+  <script type="text/javascript" src="/vendor/requirejs-bower/require.js" data-main="main"></script>
 </head>
 <body>
   <div class="container">
