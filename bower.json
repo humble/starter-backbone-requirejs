@@ -20,10 +20,10 @@
     "tests"
   ],
   "dependencies": {
-    "normalize.css": "~3.0.1",
-    "jquery": "~2.1.1",
-    "underscore": ">=1.5.0",
-    "backbone": "~1.1.2",
+    "normalize.css": "2.1.1",
+    "jquery": "1.9.1",
+    "underscore": "1.4.4",
+    "backbone": "1.1.0",
     "requirejs-bower": "~2.1.14",
     "requirejs-text": "~2.0.12"
   }
